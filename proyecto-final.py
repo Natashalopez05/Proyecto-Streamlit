@@ -44,6 +44,9 @@ def process_csv_files(directory, title):
 
 st.title('Clasificación de Información', anchor='center')
 
+process_csv_files('_split_csv', 'Archivos CSV Originales')
+process_csv_files('_clean_csv', 'Archivos CSV Limpios')
+
 model, mlb, vectorizer = load_model('./models/model.pkl', './models/mlb.pkl', './models/vectorizer.pkl')
 busqueda = st.text_input('Introduce una frase:', key='test_sentence')
 predicted_genres = predict_genres(busqueda, model, mlb, vectorizer)
@@ -51,8 +54,5 @@ predicted_genres = predict_genres(busqueda, model, mlb, vectorizer)
 if busqueda:
     st.write(f"Oración de prueba: '{busqueda}'")
     st.write(f"Géneros predichos: '{predicted_genres}'")
-
-process_csv_files('_split_csv', 'Archivos CSV Originales')
-process_csv_files('_clean_csv', 'Archivos CSV Limpios')
 
 
