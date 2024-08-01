@@ -22,9 +22,9 @@ def split_csv(file_path, chunk_size, output_directory):
       print(f"Guardando {output_file}...")
 
 # Parametros
-file_path = 'games_may2024_cleaned.csv'
+file_path = 'df_final.csv'
 chunk_size = 10000
-output_directory = 'split_csv'
+output_directory = '_clean_csv'
 
 # Dividir el archivo CSV
 split_csv(file_path, chunk_size, output_directory)

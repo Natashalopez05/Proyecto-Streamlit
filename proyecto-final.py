@@ -48,7 +48,7 @@ process_csv_files('_split_csv', 'Archivos CSV Originales')
 process_csv_files('_clean_csv', 'Archivos CSV Limpios')
 
 model, mlb, vectorizer = load_model('./models/model.pkl', './models/mlb.pkl', './models/vectorizer.pkl')
-busqueda = st.text_input('Introduce una frase:', key='test_sentence')
+busqueda = st.text_input('Introduce una frase:', key='test_sentence', placeholder='Shooter and car racing games')
 predicted_genres = predict_genres(busqueda, model, mlb, vectorizer)
 
 if busqueda:
